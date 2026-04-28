@@ -84,7 +84,7 @@ export default function ImageToPDF() {
         setProcessing(prev => ({ ...prev, progress: p }))
       })
 
-      const blob = new Blob([bytes], { type: 'application/pdf' })
+      const blob = new Blob([bytes.buffer as ArrayBuffer], { type: 'application/pdf' })
       saveAs(blob, settings.outputFilename || 'output.pdf')
       setProcessing({ isProcessing: false, progress: 100, stage: 'Done!', error: null })
       showToast('success', `PDF created with ${files.length} image${files.length > 1 ? 's' : ''}! Downloaded.`)

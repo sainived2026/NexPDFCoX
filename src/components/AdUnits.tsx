@@ -6,11 +6,11 @@
 import { useEffect, useRef } from 'react'
 
 // Read from Vite env — configure in your .env file
-const PUBLISHER_ID = import.meta.env.VITE_ADSENSE_PUBLISHER_ID ?? 'pub-7050860488978143'
-const SLOT_HORIZONTAL = import.meta.env.VITE_AD_SLOT_HORIZONTAL ?? ''
-const SLOT_RECTANGLE  = import.meta.env.VITE_AD_SLOT_RECTANGLE  ?? ''
-const SLOT_VERTICAL   = import.meta.env.VITE_AD_SLOT_VERTICAL   ?? ''
-const SLOT_RESPONSIVE = import.meta.env.VITE_AD_SLOT_RESPONSIVE ?? ''
+const PUBLISHER_ID    = import.meta.env.VITE_ADSENSE_PUBLISHER_ID ?? 'pub-7050860488978143'
+const SLOT_HORIZONTAL = import.meta.env.VITE_AD_SLOT_HORIZONTAL   ?? ''
+const SLOT_RECTANGLE  = import.meta.env.VITE_AD_SLOT_RECTANGLE    ?? ''
+const SLOT_VERTICAL   = import.meta.env.VITE_AD_SLOT_VERTICAL     ?? ''
+const SLOT_RESPONSIVE = import.meta.env.VITE_AD_SLOT_RESPONSIVE   ?? ''
 
 // Declare global adsbygoogle for TypeScript
 declare global {

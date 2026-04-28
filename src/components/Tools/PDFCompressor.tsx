@@ -65,7 +65,7 @@ export default function PDFCompressor() {
 
   const handleDownload = () => {
     if (!result || !file) return
-    const blob = new Blob([result.dataBytes], { type: 'application/pdf' })
+    const blob = new Blob([result.dataBytes.buffer as ArrayBuffer], { type: 'application/pdf' })
     const name = file.name.replace(/\.pdf$/i, '-compressed.pdf')
     saveAs(blob, name)
     showToast('success', 'Compressed PDF downloaded!')
