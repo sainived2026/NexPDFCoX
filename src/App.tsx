@@ -2,7 +2,7 @@ import React, { useState, Suspense } from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { ToastProvider } from './components/Toast'
-import { HorizontalAd, RectangleAd, VerticalAd, ResponsiveAd } from './components/AdUnits'
+import { HorizontalAd, RectangleAd, VerticalAd, ResponsiveAd, LeftSidebarAd } from './components/AdUnits'
 import { useDarkMode } from './hooks/useDarkMode'
 import type { ActiveTool } from './types'
 
@@ -56,7 +56,7 @@ function App() {
             
             {/* Left Sidebar — large desktop only */}
             <aside className="hidden 2xl:flex flex-col gap-6 w-[300px] flex-shrink-0">
-              <VerticalAd />
+              <LeftSidebarAd />
             </aside>
 
             {/* Tool Area */}

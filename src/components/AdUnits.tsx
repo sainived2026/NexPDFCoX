@@ -11,6 +11,7 @@ const PUBLISHER_ID    = import.meta.env.VITE_ADSENSE_PUBLISHER_ID ?? 'pub-705086
 const SLOT_HORIZONTAL = import.meta.env.VITE_AD_SLOT_HORIZONTAL   ?? ''
 const SLOT_RECTANGLE  = import.meta.env.VITE_AD_SLOT_RECTANGLE    ?? ''
 const SLOT_VERTICAL   = import.meta.env.VITE_AD_SLOT_VERTICAL     ?? ''
+const SLOT_LEFT_SIDE  = import.meta.env.VITE_AD_SLOT_LEFT_SIDEBAR ?? ''
 const SLOT_RESPONSIVE = import.meta.env.VITE_AD_SLOT_RESPONSIVE   ?? ''
 
 // Declare global adsbygoogle for TypeScript
@@ -104,8 +105,20 @@ export function VerticalAd() {
   return (
     <AdUnit
       slot={SLOT_VERTICAL}
-      label="Advertisement (sidebar)"
+      label="Advertisement (right sidebar)"
       className="hidden xl:block w-full"
+      style={{ minHeight: '250px', display: 'block' }}
+    />
+  )
+}
+
+// ── Left Sidebar placement — (large desktop only) ─────────────
+export function LeftSidebarAd() {
+  return (
+    <AdUnit
+      slot={SLOT_LEFT_SIDE}
+      label="Advertisement (left sidebar)"
+      className="hidden 2xl:block w-full"
       style={{ minHeight: '250px', display: 'block' }}
     />
   )
