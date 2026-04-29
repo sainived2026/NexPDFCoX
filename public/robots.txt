@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nexpdfcox.vercel.app/sitemap.xml
