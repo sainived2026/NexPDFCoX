@@ -17,8 +17,8 @@ const TOOLS: { id: ActiveTool; label: string; short: string }[] = [
 
 export default function Header({ activeTool, onToolChange, darkMode, onToggleDark }: HeaderProps) {
   return (
-    <header className="sticky top-0 z-40 w-full dark-transition" style={{ background: 'var(--surface-card)', borderBottom: '1px solid var(--border-color)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full glass-card border-b dark-transition" style={{ borderColor: 'var(--border-color)' }}>
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 gap-4">
           
           {/* Logo */}

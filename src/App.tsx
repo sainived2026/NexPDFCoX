@@ -46,16 +46,21 @@ function App() {
         />
 
         {/* Horizontal Ad — below header */}
-        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-4">
+        <div className="max-w-[1500px] mx-auto w-full px-4 sm:px-6 lg:px-8 pt-4">
           <HorizontalAd />
         </div>
 
         {/* Main Layout */}
-        <main className="flex-1 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex gap-8">
+        <main className="flex-1 max-w-[1500px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
+          <div className="flex justify-center gap-6 xl:gap-8">
             
+            {/* Left Sidebar — large desktop only */}
+            <aside className="hidden 2xl:flex flex-col gap-6 w-[300px] flex-shrink-0">
+              <VerticalAd />
+            </aside>
+
             {/* Tool Area */}
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 max-w-4xl">
               <div className="glass-card p-6 md:p-8">
                 <Suspense fallback={<ToolSkeleton />}>
                   {activeTool === 'pdf-to-image'  && <PDFToImage />}

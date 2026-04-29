@@ -10,7 +10,7 @@ interface FooterProps {
 export default function Footer({ onToolChange }: FooterProps) {
   return (
     <footer className="w-full border-t dark-transition mt-auto" style={{ borderColor: 'var(--border-color)', background: 'var(--surface-card)' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* Brand */}
