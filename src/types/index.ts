@@ -2,7 +2,7 @@
 //  NexPDFCoX — Global Type Definitions
 // ============================================================
 
-export type ActiveTool = 'pdf-to-image' | 'image-to-pdf' | 'compressor'
+export type ActiveTool = 'pdf-to-image' | 'image-to-pdf' | 'compressor' | 'about' | 'privacy' | 'terms'
 
 export type OutputFormat = 'jpg' | 'png' | 'webp'
 export type DPI = 72 | 150 | 300

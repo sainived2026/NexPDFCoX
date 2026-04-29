@@ -11,6 +11,8 @@ const PDFToImage   = React.lazy(() => import('./components/Tools/PDFToImage'))
 const ImageToPDF   = React.lazy(() => import('./components/Tools/ImageToPDF'))
 const PDFCompressor = React.lazy(() => import('./components/Tools/PDFCompressor'))
 
+import { AboutPage, PrivacyPage, TermsPage } from './components/Pages/StaticPages'
+
 function ToolSkeleton() {
   return (
     <div className="flex flex-col gap-5 animate-pulse">
@@ -59,6 +61,9 @@ function App() {
                   {activeTool === 'pdf-to-image'  && <PDFToImage />}
                   {activeTool === 'image-to-pdf'  && <ImageToPDF />}
                   {activeTool === 'compressor'    && <PDFCompressor />}
+                  {activeTool === 'about'         && <AboutPage />}
+                  {activeTool === 'privacy'       && <PrivacyPage />}
+                  {activeTool === 'terms'         && <TermsPage />}
                 </Suspense>
               </div>
 
@@ -123,7 +128,7 @@ function App() {
           </div>
         </main>
 
-        <Footer />
+        <Footer onToolChange={handleToolChange} />
       </div>
     </ToastProvider>
   )

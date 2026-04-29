@@ -1,9 +1,15 @@
 import React from 'react'
 import { Heart, Shield, Zap, Github } from 'lucide-react'
 
-export default function Footer() {
+import { ActiveTool } from '../types'
+
+interface FooterProps {
+  onToolChange: (tool: ActiveTool) => void
+}
+
+export default function Footer({ onToolChange }: FooterProps) {
   return (
-    <footer className="w-full border-t dark-transition" style={{ borderColor: 'var(--border-color)', background: 'var(--surface-card)' }}>
+    <footer className="w-full border-t dark-transition mt-auto" style={{ borderColor: 'var(--border-color)', background: 'var(--surface-card)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
@@ -37,16 +43,17 @@ export default function Footer() {
 
           {/* Links */}
           <div className="flex items-center gap-4 text-xs" style={{ color: 'var(--text-muted)' }}>
-            <a href="#" className="hover:underline" style={{ color: 'var(--text-secondary)', fontFamily: "'DM Sans', sans-serif" }}>Privacy</a>
-            <a href="#" className="hover:underline" style={{ color: 'var(--text-secondary)', fontFamily: "'DM Sans', sans-serif" }}>Terms</a>
-            <a href="#" className="hover:underline flex items-center gap-1" style={{ color: 'var(--text-secondary)', fontFamily: "'DM Sans', sans-serif" }}>
+            <button onClick={() => onToolChange('about')} className="hover:underline" style={{ color: 'var(--text-secondary)', fontFamily: "'DM Sans', sans-serif" }}>About</button>
+            <button onClick={() => onToolChange('privacy')} className="hover:underline" style={{ color: 'var(--text-secondary)', fontFamily: "'DM Sans', sans-serif" }}>Privacy</button>
+            <button onClick={() => onToolChange('terms')} className="hover:underline" style={{ color: 'var(--text-secondary)', fontFamily: "'DM Sans', sans-serif" }}>Terms</button>
+            <a href="https://github.com/sainived2026/NexPDFCoX" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-1" style={{ color: 'var(--text-secondary)', fontFamily: "'DM Sans', sans-serif" }}>
               <Github className="w-3 h-3" /> GitHub
             </a>
           </div>
         </div>
 
-        <div className="mt-6 pt-4 border-t flex items-center justify-center text-xs" style={{ borderColor: 'var(--border-color)', color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}>
-          © {new Date().getFullYear()} NexPDFCoX · Built with love · Files auto-deleted after 24h
+        <div className="mt-6 pt-4 border-t flex items-center justify-center text-xs text-center" style={{ borderColor: 'var(--border-color)', color: 'var(--text-muted)', fontFamily: "'JetBrains Mono', monospace" }}>
+          © {new Date().getFullYear()} NexPDFCoX · 100% Client-Side Processing · No files are ever uploaded
         </div>
       </div>
     </footer>
